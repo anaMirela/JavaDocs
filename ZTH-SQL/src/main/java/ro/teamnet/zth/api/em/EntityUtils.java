@@ -29,13 +29,23 @@ public class EntityUtils {
         Field[] fields = entity.getDeclaredFields();
         for (Field f:fields) {
             Column c = (Column)f.getAnnotation(Column.class);
+            Id id = (Id) f.getAnnotation(Id.class);
             if (c != null){
                 cInfo=new ColumnInfo();
                 cInfo.setColumnName(f.getName());
                 cInfo.setColumnType(f.getType());
                 cInfo.setDbName(c.name());
+                cInfo.setIsId(false);
+                columnInfos.add(cInfo);
+            } else {
+                cInfo=new ColumnInfo();
+                cInfo.setColumnName(f.getName());
+                cInfo.setColumnType(f.getType());
+                cInfo.setDbName(id.name());
+                cInfo.setIsId(true);
                 columnInfos.add(cInfo);
             }
+
 
         }
         return columnInfos;

@@ -1,7 +1,9 @@
 package ro.teamnet.zth.api.database;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -10,6 +12,7 @@ import java.sql.SQLException;
 public class DBManager {
 
     static final String CONNECTION_STRING = "jdbc:mysql://" + DProperties.IP + "/" + DProperties.SCHEMA;
+
     private DBManager() {
         throw new UnsupportedOperationException();
     }
@@ -32,11 +35,25 @@ public class DBManager {
         }
         return conn;
     }
+
     /* TODO */
     public static boolean checkConnection() {
+        Connection conn = getConnection();
+        java.sql.Statement stm = null;
+        try {
+            stm = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ResultSet resultSet = null;
+        try {
+            resultSet = stm.executeQuery("SELECT 1 FROM DUAL;");
+            return resultSet.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
-
 
 
 }

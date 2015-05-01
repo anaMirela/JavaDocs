@@ -10,5 +10,6 @@ public class DBManagerTest {
     @Test
     public  void testDBManager() {
         assertNotNull(DBManager.getConnection());
+        assertTrue(DBManager.checkConnection());
     }
 }

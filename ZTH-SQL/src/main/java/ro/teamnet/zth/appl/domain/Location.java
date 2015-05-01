@@ -9,6 +9,7 @@ import ro.teamnet.zth.api.annotations.Table;
  */
 @Table(name="locations")
 public class Location {
+
     @Id(name="location_id")
     private int id;
 
