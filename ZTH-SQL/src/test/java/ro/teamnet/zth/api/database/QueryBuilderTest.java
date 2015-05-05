@@ -12,14 +12,14 @@ public class QueryBuilderTest {
     @Test
     public void testCreateQuery() {
         QueryBuilder qb = new QueryBuilder();
-
+/*
         qb.setQueryType(QueryType.SELECT);
         System.out.println(qb.createQuery());
         qb.setQueryType(QueryType.INSERT);
         System.out.println(qb.createQuery());
         qb.setQueryType(QueryType.UPDATE);
-        System.out.println(qb.createQuery());
-        qb.setQueryType(QueryType.DELETE);
-        System.out.println(qb.createQuery());
+        System.out.println(qb.createQuery());*/
+       // qb.setQueryType(QueryType.DELETE);
+        //System.out.println(qb.createQuery());
     }
 }

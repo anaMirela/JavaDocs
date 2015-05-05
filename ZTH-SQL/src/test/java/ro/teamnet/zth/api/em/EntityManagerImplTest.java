@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Mi on 4/30/2015.
  */
 public class EntityManagerImplTest {
-
+/*
     @Test
     public void testFindById() {
         EntityManagerImpl entityManager = new EntityManagerImpl();
@@ -59,5 +59,5 @@ public class EntityManagerImplTest {
         location = entityManager.findById(Location.class, 3207);
         entityManager.delete(location);
     }
-
+*/
 }
